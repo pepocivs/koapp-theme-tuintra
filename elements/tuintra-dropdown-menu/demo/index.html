@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <title>tuintra-dropdown-menu demo</title>
+
+    <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../../../../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../tuintra-item/tuintra-item.html">
+    <link rel="import" href="../../tuintra-menu/tuintra-menu.html">
+    <link rel="import" href="../tuintra-dropdown-menu.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      .vertical-section-container {
+        max-width: 500px;
+      }
+
+      .vertical-section {
+        text-align: center;
+        margin: 0 0 40px;
+      }
+
+      tuintra-dropdown-menu {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <div class="vertical-section-container centered">
+      <h4>This is a plain tuintra-dropdown-menu</h4>
+      <div class="vertical-section">
+        <tuintra-dropdown-menu label="Dinosaurs">
+          <tuintra-menu class="dropdown-content">
+            <tuintra-item>allosaurus</tuintra-item>
+            <tuintra-item>brontosaurus</tuintra-item>
+            <tuintra-item>carcharodontosaurus</tuintra-item>
+            <tuintra-item>diplodocus</tuintra-item>
+          </tuintra-menu>
+        </tuintra-dropdown-menu>
+      </div>
+
+      <h4>You can pre-select a value using the <i>selected</i> attribute</h4>
+      <div class="vertical-section">
+        <tuintra-dropdown-menu label="Dinosaurs">
+          <tuintra-menu class="dropdown-content" selected="1">
+            <tuintra-item>allosaurus</tuintra-item>
+            <tuintra-item>brontosaurus</tuintra-item>
+            <tuintra-item>carcharodontosaurus</tuintra-item>
+            <tuintra-item>diplodocus</tuintra-item>
+          </tuintra-menu>
+        </tuintra-dropdown-menu>
+      </div>
+
+      <h4>You can change the direction in which the menu opens</h4>
+      <div class="vertical-section">
+          <tuintra-dropdown-menu label="Upwards and to the left!" vertical-align="bottom" horizontal-align="left">
+            <tuintra-menu class="dropdown-content">
+              <tuintra-item>allosaurus</tuintra-item>
+              <tuintra-item>brontosaurus</tuintra-item>
+              <tuintra-item>carcharodontosaurus</tuintra-item>
+              <tuintra-item>diplodocus</tuintra-item>
+            </tuintra-menu>
+          </tuintra-dropdown-menu>
+      </div>
+
+      <h4>A tuintra-dropdown-menu can be disabled</h4>
+      <div class="vertical-section">
+        <tuintra-dropdown-menu label="Disabled dinosaurs" disabled>
+          <tuintra-menu class="dropdown-content">
+            <tuintra-item>allosaurus</tuintra-item>
+            <tuintra-item>brontosaurus</tuintra-item>
+            <tuintra-item>carcharodontosaurus</tuintra-item>
+            <tuintra-item>diplodocus</tuintra-item>
+          </tuintra-menu>
+        </tuintra-dropdown-menu>
+      </div>
+    </div>
+  </body>
+</html>

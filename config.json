@@ -1,0 +1,62 @@
+{
+  "name": "koapp-theme-tuintra",
+  "identifier": "koapp-theme-tuintra",
+  "description": {
+    "es-ES": "Tema de koapp para la App de tuintra",
+    "en-US": "Koapp's theme for tuintra app"
+  },
+  "version": "0.0.0",
+  "author": "tuintra",
+  "category": ["sports","tuintra","koapp","hockey","football","soccer","baseball","basketball","callups","players","coach","time","game","pitch","fieldhockey"],
+  "price": 0,
+  "platforms": [
+    "android",
+    "ios",
+    "windows"
+  ],
+  "showOn": {
+    "market": true
+  },
+  "images" : {
+    "list" : "themes/koapp-theme-tuintra/images/list.png",
+    "screenshots" : [
+      "themes/koapp-theme-tuintra/images/screenshot01.png",
+      "themes/koapp-theme-tuintra/images/screenshot02.png"
+    ],
+    "popover" : "themes/koapp-theme-tuintra/images/popover.png",
+    "banner" : "themes/koapp-theme-tuintra/images/banner.png"
+  },
+  "defaultConfig": {
+    "colors": {
+      "primaryTextColor": "#212121",
+      "primaryBackgroundColor": "#ffffff",
+      "secondaryTextColor": "#737373",
+      "disabledTextColor": "#9b9b9b",
+      "dividerColor": "#dbdbdb",
+      "primaryColor": "#3f51b5",
+      "lightPrimaryColor": "#c5cae9",
+      "darkPrimaryColor": "#303f9f",
+      "accentColor": "#ff4081",
+      "lightAccentColor": "#ff80ab",
+      "darkAccentColor": "#f50057",
+      "errorColor": "#dd2c00",
+      "backgroundColor": "#ffffff"
+    },
+    "images": {
+      "background": ""
+    },
+    "fonts": {
+      "primaryFontFamily": {
+        "name": "",
+        "url": ""
+      },
+      "titleFontFamily": {
+        "name": "",
+        "url": ""
+      }
+    },
+    "menu": "polymermenu"
+  },
+  "subscription": false,
+  "main": "themes/koapp-theme-tuintra/koapp-theme-tuintra.html"
+}

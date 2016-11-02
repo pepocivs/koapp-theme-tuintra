@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <title>tuintra-toolbar demo</title>
+
+    <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../../../../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../../../../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="../../../../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../../styles/default-theme.html">
+    <link rel="import" href="../../tuintra-icon-button/tuintra-icon-button.html">
+    <link rel="import" href="../../tuintra-progress/tuintra-progress.html">
+    <link rel="import" href="../tuintra-toolbar.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      .centered {
+        min-width: calc(100% - 200px);
+      }
+
+      tuintra-toolbar tuintra-progress {
+        --progress-active-color: var(--accent-color);
+      }
+
+      .spacer {
+        @apply(--layout-flex);
+      }
+
+      .vertical-section {
+        margin: 0 0 40px;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <div class="vertical-section-container centered">
+      <h3>
+        A plain <code>tuintra-toolbar</code>. Use <code>class="title"</code> to
+        indicate the toolbar's title.
+      </h3>
+      <div class="vertical-section">
+        <tuintra-toolbar>
+          <span class="title">Title</span>
+        </tuintra-toolbar>
+      </div>
+
+      <h3>A styled <code>tuintra-toolbar</code>.</h3>
+      <div class="vertical-section">
+        <style is="custom-style">
+          tuintra-toolbar.red {
+            --toolbar-background: red;
+            --toolbar-title: {
+              font-style: italic;
+              font-weight: bold;
+            };
+          }
+        </style>
+
+        <tuintra-toolbar class="red">
+          <span class="title">Title</span>
+        </tuintra-toolbar>
+      </div>
+
+      <h3>
+        <code>tuintra-icon-button</code> is styled specially when used in a toolbar
+        before the title element or if the button has <code>icon="menu"</code>.
+      </h3>
+      <div class="vertical-section">
+        <tuintra-toolbar>
+          <tuintra-icon-button icon="menu"></tuintra-icon-button>
+          <span class="title">Title</span>
+          <tuintra-icon-button icon="refresh"></tuintra-icon-button>
+          <tuintra-icon-button icon="add">+</tuintra-icon-button>
+        </tuintra-toolbar>
+      </div>
+
+      <h3>
+        Use <code>class="tall"</code> to expand the toolbar to three sections.
+      </h3>
+      <div class="vertical-section">
+        <tuintra-toolbar class="tall">
+          <tuintra-icon-button icon="menu"></tuintra-icon-button>
+          <span class="title">Title</span>
+          <tuintra-icon-button icon="refresh"></tuintra-icon-button>
+          <tuintra-icon-button icon="add">+</tuintra-icon-button>
+        </tuintra-toolbar>
+      </div>
+
+      <h3>
+        Use <code>class="medium-tall"</code> to expand the toolbar to two
+        sections.
+      </h3>
+      <div class="vertical-section">
+        <tuintra-toolbar class="medium-tall">
+          <tuintra-icon-button icon="menu"></tuintra-icon-button>
+          <span class="title">Title</span>
+          <tuintra-icon-button icon="refresh"></tuintra-icon-button>
+          <tuintra-icon-button icon="add">+</tuintra-icon-button>
+        </tuintra-toolbar>
+      </div>
+
+      <h3>
+        Use <code>class="middle"</code> and <code>class="bottom"</code> to
+        indicate which section of the toolbar an element should be placed in.
+        Elements are placed in the top section by default.
+      </h3>
+      <div class="vertical-section">
+        <tuintra-toolbar class="tall">
+          <tuintra-icon-button icon="menu"></tuintra-icon-button>
+          <span class="title">Title</span>
+          <tuintra-icon-button icon="refresh"></tuintra-icon-button>
+          <tuintra-icon-button icon="add">+</tuintra-icon-button>
+
+          <span class="middle title">Middle Title</span>
+
+          <span class="bottom title">Bottom Title</span>
+          <tuintra-icon-button icon="content-cut" class="bottom"></tuintra-icon-button>
+          <tuintra-icon-button icon="content-copy" class="bottom"></tuintra-icon-button>
+          <tuintra-icon-button icon="content-paste" class="bottom"></tuintra-icon-button>
+        </tuintra-toolbar>
+      </div>
+
+      <h3>
+        Don't use both <code>class="middle"</code> and <code>class="bottom"</code>
+        elements in a <code>class="medium-tall"</code> toolbar.
+      </h3>
+      <div class="vertical-section">
+        <tuintra-toolbar class="medium-tall">
+          <tuintra-icon-button icon="menu"></tuintra-icon-button>
+          <span class="title">Top Title</span>
+          <tuintra-icon-button icon="refresh"></tuintra-icon-button>
+          <tuintra-icon-button icon="add">+</tuintra-icon-button>
+
+          <span class="middle title">Middle Title</span>
+
+          <span class="bottom title">Bottom Title</span>
+        </tuintra-toolbar>
+      </div>
+
+      <h3>
+        Elements with <code>class="fit"</code> expand to fit to the bottom of the
+        toolbar section they are in.
+      </h3>
+      <div class="vertical-section">
+        <tuintra-toolbar class="medium-tall">
+          <tuintra-icon-button icon="menu"></tuintra-icon-button>
+          <div class="spacer"></div>
+          <tuintra-icon-button icon="refresh"></tuintra-icon-button>
+          <tuintra-icon-button icon="add">+</tuintra-icon-button>
+          <div class="middle title">Title</div>
+          <tuintra-progress class="middle fit" value="60"></tuintra-progress>
+        </tuintra-toolbar>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <title>tuintra-dialog demo</title>
+
+    <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../../../../bower_components/neon-animation/neon-animations.html">
+    <link rel="import" href="../../../../../bower_components/paper-styles/color.html">
+    <link rel="import" href="../../../../../bower_components/paper-styles/demo-pages.html">
+    <link rel="import" href="../../tuintra-button/tuintra-button.html">
+    <link rel="import" href="../../tuintra-dropdown-menu/tuintra-dropdown-menu.html">
+    <link rel="import" href="../../tuintra-item/tuintra-item.html">
+    <link rel="import" href="../../tuintra-menu/tuintra-menu.html">
+    <link rel="import" href="../tuintra-dialog.html">
+
+    <style is="custom-style">
+      section {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+      }
+
+      section > tuintra-button {
+        background-color: var(--google-grey-300);
+        padding: 5px;
+      }
+
+      section > tuintra-button:hover {
+        background-color: var(--paper-light-blue-200);
+        padding: 5px;
+      }
+
+      tuintra-dialog.colored {
+        border: 2px solid;
+        border-color: var(--paper-green-500);
+        background-color: var(--paper-light-green-50);
+        color: var(--paper-green-500);
+      }
+
+      tuintra-dialog.size-position {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        width: 300px;
+        height: 300px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section onclick="clickHandler(event)">
+      <h4>Dialog layouts</h4>
+
+      <tuintra-button data-dialog="dialog">plain dialog</tuintra-button>
+      <tuintra-button data-dialog="actions">dialog with actions</tuintra-button>
+      <tuintra-button data-dialog="modal">modal dialog</tuintra-button>
+      <tuintra-button data-dialog="dropdown">dialog with dropdown</tuintra-button>
+      <tuintra-button data-dialog="nested">dialog with nested dialog</tuintra-button>
+
+      <tuintra-dialog id="dialog">
+        <h2>Dialog Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </tuintra-dialog>
+
+      <tuintra-dialog id="actions">
+        <h2>Dialog Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="buttons">
+          <tuintra-button >More Info...</tuintra-button>
+          <tuintra-button dialog-dismiss>Decline</tuintra-button>
+          <tuintra-button dialog-confirm autofocus>Accept</tuintra-button>
+        </div>
+      </tuintra-dialog>
+
+      <tuintra-dialog id="modal" modal>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="buttons">
+          <tuintra-button dialog-confirm autofocus>Tap me to close</tuintra-button>
+        </div>
+      </tuintra-dialog>
+
+      <tuintra-dialog id="dropdown">
+        <h2>Dialog Title</h2>
+        <tuintra-dropdown-menu label="Value">
+          <tuintra-menu class="dropdown-content">
+            <tuintra-item>1</tuintra-item>
+            <tuintra-item>2</tuintra-item>
+            <tuintra-item>3</tuintra-item>
+            <tuintra-item>4</tuintra-item>
+            <tuintra-item>5</tuintra-item>
+            <tuintra-item>6</tuintra-item>
+            <tuintra-item>7</tuintra-item>
+            <tuintra-item>8</tuintra-item>
+            <tuintra-item>9</tuintra-item>
+            <tuintra-item>10</tuintra-item>
+          </tuintra-menu>
+        </tuintra-dropdown-menu>
+      </tuintra-dialog>
+
+      <tuintra-dialog id="nested">
+        <h2>Dialog Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="buttons">
+          <tuintra-button data-dialog="innerDialog">Open nested dialog</tuintra-button>
+        </div>
+      </tuintra-dialog>
+
+      <tuintra-dialog id="innerDialog">
+        <h2>Dialog Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </tuintra-dialog>
+    </section>
+
+    <section onclick="clickHandler(event)">
+      <h4>Custom styling</h4>
+      <tuintra-button data-dialog="colors">colors</tuintra-button>
+      <tuintra-button data-dialog="position">size &amp; position</tuintra-button>
+
+      <tuintra-dialog id="colors" class="colored">
+        <h2>Custom Colors</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </tuintra-dialog>
+
+      <tuintra-dialog id="position" class="size-position">
+        <h2>Custom Size &amp; Position</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </tuintra-dialog>
+    </section>
+
+    <section onclick="clickHandler(event)">
+      <h4>Transitions</h4>
+      <tuintra-button data-dialog="animated">transitions</tuintra-button>
+      <tuintra-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+        <h2>Dialog Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </tuintra-dialog>
+    </section>
+
+    <script>
+      // eslint-disable-next-line no-unused-vars
+      function clickHandler(e) {
+        var button = e.target;
+        while (!button.hasAttribute('data-dialog') && button !== document.body) {
+          button = button.parentElement;
+        }
+
+        if (!button.hasAttribute('data-dialog')) {
+          return;
+        }
+
+        var id = button.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+        if (dialog) {
+          dialog.open();
+        }
+      }
+    </script>
+  </body>
+</html>
