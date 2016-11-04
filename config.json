@@ -21,7 +21,9 @@
     "list" : "themes/koapp-theme-tuintra/images/list.png",
     "screenshots" : [
       "themes/koapp-theme-tuintra/images/screenshot01.png",
-      "themes/koapp-theme-tuintra/images/screenshot02.png"
+      "themes/koapp-theme-tuintra/images/screenshot02.png",
+	  "themes/koapp-theme-tuintra/images/screenshot03.png",
+	  "themes/koapp-theme-tuintra/images/screenshot04.png"
     ],
     "popover" : "themes/koapp-theme-tuintra/images/popover.png",
     "banner" : "themes/koapp-theme-tuintra/images/banner.png"
